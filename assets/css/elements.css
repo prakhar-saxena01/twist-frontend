@@ -1,0 +1,676 @@
+:root { /* #e08419 is awesome as well */
+}
+
+/** BASICS
+--------------------------------------------------------- */
+
+.row-from-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.row-from-right > * {
+  margin-left: 8px;
+}
+
+/** HEADINGS AND PARAGRAPHS
+--------------------------------------------------------- */
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+small {
+  font-size: .5em;
+}
+
+p {
+  color: rgba(255, 255, 255, .5);
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+em {
+  color: #e53232;
+}
+
+/** ARTICLES
+--------------------------------------------------------- */
+
+article + article {
+  margin-top: 16px;
+}
+
+article.large > :nth-child(n+2) {
+  margin-top: 1rem;
+}
+
+article section li {
+  color: rgba(255, 255, 255, .5);
+}
+
+article ul li::before {
+  content: '\\b7';
+  margin-right: 8px;
+}
+
+article .article-ruler {
+  padding-left: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, .05);
+}
+
+article section {
+  position: relative;
+}
+
+article section:target {
+  background: #e5323255;
+  padding: 2em;
+}
+
+article section.article-ruler:target {
+  border-left: none;
+}
+
+article .nav-link,
+article .exit-nav-link {
+  padding: 1px;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 1em;
+  height: 1em;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .05);
+  text-align: center;
+  display: inline-block;
+  margin-left: .5em;
+}
+
+article .table-of-content {
+  border: 1px dashed rgba(255, 255, 255, .05);
+  border-width: 1px 0;
+  padding: 1rem;
+  list-style: none;
+  counter-reset: ol;
+}
+
+article .table-of-content a {
+  display: flex;
+  padding: .25em 0;
+}
+
+article .table-of-content a::before {
+  counter-increment: ol;
+  content: counter(ol)'.';
+  margin-right: .5em;
+}
+
+/** TOOLTIPS
+--------------------------------------------------------- */
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, .9);
+  color: #111;
+  color: #1c1f22;
+  border-radius: 2px;
+  padding: 4px 8px;
+  pointer-events: none;
+  bottom: 100%;
+  margin: auto;
+  white-space: nowrap;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  z-index: 4;
+}
+
+[data-tooltip]::after {
+  position: absolute;
+  content: '';
+  bottom: calc(100% - 6px);
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  height: 4px;
+  width: 4px;
+  background: white;
+  z-index: 4;
+}
+
+[data-tooltip]:hover::before, [data-tooltip]:hover::after {
+  transition: opacity .1s .15s;
+}
+
+[data-tooltip]:not(:hover)::before, [data-tooltip]:not(:hover)::after {
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+/** ANIMATIONS
+--------------------------------------------------------- */
+
+@-webkit-keyframes pulse {
+  50% {
+    color: white;
+    fill: white;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    color: white;
+    fill: white;
+  }
+}
+
+@-webkit-keyframes pulseWeak {
+  50% {
+    color: rgba(255, 255, 255, .8);
+    fill: rgba(255, 255, 255, .8);
+  }
+}
+
+@keyframes pulseWeak {
+  50% {
+    color: rgba(255, 255, 255, .8);
+    fill: rgba(255, 255, 255, .8);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg) }
+}
+
+@keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg) }
+}
+
+@-webkit-keyframes flash {
+  0% {
+    box-shadow: 0 0 4px 4px rgba(255, 255, 255, .075);
+  }
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 4px 4px rgba(255, 255, 255, .075);
+  }
+}
+
+@-webkit-keyframes flashAccent {
+  0% {
+    box-shadow: 0 0 4px 4px #e53232;
+  }
+}
+
+@keyframes flashAccent {
+  0% {
+    box-shadow: 0 0 4px 4px #e53232;
+  }
+}
+
+/** LINKS
+--------------------------------------------------------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  transition: color .15s;
+}
+
+a:hover {
+  -webkit-animation: pulse .38s infinite;
+          animation: pulse .38s infinite;
+}
+
+a:active, a:focus {
+  color: white;
+}
+
+p a {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, .6);
+}
+
+p a:hover, p a:focus {
+  -webkit-animation: pulseWeak .38s infinite;
+          animation: pulseWeak .38s infinite;
+}
+
+p a:active {
+  color: rgba(255, 255, 255, .8);
+}
+
+/** ICONS
+--------------------------------------------------------- */
+
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: rgb(255, 255, 255);
+}
+
+.icon.half-width {
+  width: .5em;
+}
+
+.icon.overshoot {
+  width: 1.3em;
+  height: 1.3em;
+}
+
+/** FORM ELEMENTS
+--------------------------------------------------------- */
+
+form > :not(:first-child):not(:last-child) {
+  margin: 8px 0;
+}
+
+form .actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+form .actions > * {
+  margin-left: 1em;
+}
+
+input:not([type=\"checkbox\"]), textarea, select {
+  font: inherit;
+  line-height: 1.5;
+  color: inherit;
+  border: none;
+  display: block;
+  background: rgba(255, 255, 255, .05);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 2px;
+  resize: none;
+}
+
+/** WEBKIT FIX */
+
+input[type=\"search\"] {
+  -webkit-appearance: none;
+}
+
+input[type=\"search\"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/** END WEBKIT FIX */
+
+input[readonly] {
+  background: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, .075);
+  -webkit-animation: flash .6s;
+          animation: flash .6s;
+}
+
+input:invalid {
+  color: rgba(255, 255, 255, .5);
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, .2) !important;
+  opacity: 1;
+}
+
+input::-moz-placeholder {
+  color: rgba(255, 255, 255, .2) !important;
+  opacity: 1;
+}
+
+input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, .2) !important;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, .2) !important;
+  opacity: 1;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type=\"checkbox\"]:hover + label, input[type=\"checkbox\"] + label:hover,
+input[type=\"checkbox\"]:focus + label, input[type=\"checkbox\"] + label:focus,
+input[type=\"checkbox\"]:active + label, input[type=\"checkbox\"] + label:active {
+  -webkit-animation: pulse .38s infinite;
+          animation: pulse .38s infinite;
+}
+
+input[type=\"checkbox\"] + label {
+  display: flex;
+  align-items: center;
+}
+
+input[type=\"checkbox\"] + label::before {
+  margin-right: 16px;
+  flex: none;
+  content: '';
+  display: block;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, .05) url("../vectors/checkbox/uncheck.svg");
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+}
+
+input[type=\"checkbox\"]:checked + label::before {
+  background-image: url("../vectors/checkbox/check.svg");
+}
+
+input[type=\"checkbox\"]:disabled + label::before {
+  background-image: url("../vectors/checkbox/disable.svg");
+}
+
+input[type=\"checkbox\"]:hover + label::before {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.input-group {
+  position: relative;
+  background: rgba(255, 255, 255, .05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.input-group label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.input-group > label {
+  padding: 8px 16px 0;
+  cursor: text;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  -webkit-animation: none;
+          animation: none;
+  background: none;
+  border-radius: 0;
+}
+
+.input-group .related-tick {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.input-group .related-tick label::before {
+  order: 1;
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/** BUTTONS
+--------------------------------------------------------- */
+
+button,
+[role=\"button\"] {
+  font: inherit;
+  color: inherit;
+  background-color: rgba(255, 255, 255, .05);
+  border: 1px solid hsla(0, 100%, 100%, .0);
+  padding: .5em 1em;
+  border-radius: .25em;
+  box-shadow: inset 0 0 0 0 hsla(0, 100%, 100%, .05);
+  transition: box-shadow .3s, border .15s ease-in;
+  outline: none;
+
+  min-height: 2em;
+  overflow: hidden;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+button:hover,
+[role=\"button\"]:hover {
+  border: 1px solid hsla(0, 100%, 100%, .075);
+  -webkit-animation: none;
+          animation: none;
+}
+
+button:active,
+[role=\"button\"]:active {
+  box-shadow: inset 0 0 0 1em hsla(0, 100%, 100%, .05);
+  transition: none;
+}
+
+button:focus,
+[role=\"button\"]:focus {
+  box-shadow:
+  inset 0 0 0 0 hsla(0, 100%, 100%, .05),
+  0 0 0 .25em hsla(0, 100%, 100%, .05);
+}
+
+button:active:focus,
+[role=\"button\"]:active:focus {
+  box-shadow:
+  inset 0 0 0 1em hsla(0, 100%, 100%, .05),
+  0 0 0 .25em hsla(0, 100%, 100%, .05);
+}
+
+button > :nth-child(n+2),
+[role=\"button\"] > :nth-child(n+2) {
+  margin-left: .5em;
+}
+
+button > svg ,
+[role=\"button\"] > svg {
+  flex: none;
+}
+
+button > span,
+[role=\"button\"] > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+button.active-item,
+[role=\"button\"].active-item {
+  color: rgba(255, 255, 255, .2);
+  fill: rgba(255, 255, 255, .2);
+}
+
+button:active, [role=\"button\"]:active {
+  transition: none;
+  background: rgba(255, 255, 255, .1);
+}
+
+button.strong, [role=\"button\"].strong {
+  background: rgba(255, 255, 255, .1);
+}
+
+button.strong:active, [role=\"button\"].strong:active {
+  background: rgba(255, 255, 255, .2);
+}
+
+button:disabled, input[type=\"checkbox\"]:disabled + label {
+  color: rgba(255, 255, 255, .2);
+  fill: rgba(255, 255, 255, .2);
+  pointer-events: none;
+  -webkit-animation: none;
+          animation: none;
+}
+
+/** LISTS
+--------------------------------------------------------- */
+
+ul {
+  list-style: none;
+}
+
+nav ul.interactive,
+ul.data-list {
+  border-top: 1px solid rgba(255, 255, 255, .05);
+}
+
+ul.interactive li,
+ul.data-list li {
+  display: flex;
+  align-items: stretch;
+  background-clip: padding-box;
+  transition: background .6s;
+  /* margin: 0 -16px; */
+}
+
+ul.interactive li {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+nav ul.interactive li,
+ul.data-list li {
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+ul.interactive li:active {
+  transition: none;
+  background-color: rgba(255, 255, 255, .05);
+}
+
+ul.interactive li > * {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  flex: auto;
+}
+
+ul.data-list li > * {
+  display: flex;
+  align-items: center;
+  padding: .5em;
+  line-height: 1;
+  flex: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.data-list li > :nth-child(n+2) {
+  border-left: 1px solid rgba(255, 255, 255, .05);
+}
+
+li > .fixed {
+  flex: none !important;
+}
+
+li > .kloss {
+  align-self: stretch;
+  width: 4em;
+  flex: none !important;
+  background-color: rgba(255, 255, 255, .02);
+}
+
+li > .kloss > :nth-child(n+2) {
+  margin-left: .5em;
+  margin-left: .5em;
+}
+
+/** Tables
+--------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+}
+
+table td {
+  border: 1px solid rgba(255, 255, 255, .025);
+  padding: .5em;
+}
+
+/** ALERTS
+--------------------------------------------------------- */
+
+pre {
+  border: 1px dotted rgba(255, 255, 255, 0.05);
+  font: 500 .75em/1 'Source Code Pro', monospace;
+  overflow: auto;
+  border-radius: .25rem;
+  padding: 16px;
+  color: #e53232;
+  color: #e53232;
+}
+
+.alert {
+  margin: 8px 0;
+  padding: 4px 16px;
+  border-radius: 2px;
+  background: #e53232;
+  background: #e53232;
+  overflow: hidden;
+  display: flex;
+  flex: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+.alert > :nth-last-child(n+2) {
+  margin-right: 1em;
+}
+
+.alert svg {
+  margin-left: auto;
+  border-radius: 50%;
+  transition: background .1s;
+}
+
+.alert:hover svg {
+  background: rgba(255, 255, 255, .8);
+}
+
+.alert button {
+  -webkit-transform: translateX(12px);
+          transform: translateX(12px);
+}

@@ -1,0 +1,7 @@
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = require("../../../node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".notification-msg[data-v-3c4ffad7] {\n  margin-bottom: 15px;\n  order: -2;\n  background: rgba(255, 255, 255, .05);\n  padding: 1rem;\n  max-width: none;\n}\n.notification-msg > .msg[data-v-3c4ffad7] {\n  display: flex;\n  align-items: flex-start;\n  max-width:600px;\n  margin: 0 auto;\n}\n.notification-msg > .msg > div[data-v-3c4ffad7] {\n  flex: auto;\n}\n.notification-msg > .msg > div > p[data-v-3c4ffad7] {\n  color: rgba(255, 255, 255, .6);\n  white-space: pre-wrap;\n}\n.notification-msg > .msg > div > h1[data-v-3c4ffad7] {\n  font-size: inherit;\n  font-weight: bold;\n  color: rgba(255, 255, 255, .8);\n  margin-bottom: 0.25em;\n  text-decoration: underline;\n}\n.notification-msg > .msg > div > h1.sos[data-v-3c4ffad7] {\n  color: #e53232;\n}\n.notification-msg > .msg > button[data-v-3c4ffad7] {\n  flex: none;\n}\n", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;

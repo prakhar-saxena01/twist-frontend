@@ -1,0 +1,43 @@
+{
+  "name": "twist-clean",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/pwa": "^3.3.5",
+    "core-js": "^3.19.3",
+    "crypto-js": "^4.1.1",
+    "localforage": "^1.10.0",
+    "mux-embed": "^4.4.0",
+    "nuxt": "^2.15.8",
+    "raven-js": "^3.27.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "sentry": "^0.1.2",
+    "ufo": "^0.7.9",
+    "vue": "^2.6.14",
+    "vue-analytics": "^5.22.1",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.3",
+    "@nuxtjs/eslint-config": "^8.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^3.1.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "prettier": "^2.5.1"
+  }
+}

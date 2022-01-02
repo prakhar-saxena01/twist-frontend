@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"checkbox",class:{ disabled: _vm.disabled, checked: _vm.checked, floating: _vm.floating },on:{"click":_vm.toggleState}},[_c('svg',{staticClass:"icon",attrs:{"viewbox":"0 0 16 16"}},[_c('polygon',{ref:"polygon",attrs:{"points":"3,12 7,8 3,4 4,3 8,7 12,3 13,4 9,8 13,12 12,13 8,9 4,13"}})]),_vm._v(" "),_c('div',{staticClass:"label"},[_vm._v(_vm._s(_vm.label))])])}
+var staticRenderFns = []
+
+export { render, staticRenderFns }

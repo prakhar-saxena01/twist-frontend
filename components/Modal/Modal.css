@@ -1,0 +1,7 @@
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = require("../../../node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".dialog-wrapper[data-v-1325d41e] {\n  z-index: 100;\n  position: fixed;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  background: rgba(0, 0, 0, .8);\n  display: flex;\n  align-items: center;\n  margin: 0;\n  visibility: visible;\n}\n.dialog[data-v-1325d41e] {\n  max-width: 840px;\n  max-height: 100vh;\n  flex: none;\n  padding: 1rem;\n  background: #1c1f22;\n  border-radius: 2px;\n  display: flex;\n  flex-direction: column;\n  margin: 0 auto;\n}\n.dialog .dialog-content[data-v-1325d41e] {\n  max-height: 100%;\n  padding-right: 5px;\n}\n.dialog .dialog-window-bar[data-v-1325d41e] {\n  display: flex;\n  align-items: center;\n  margin-bottom: 1rem;\n}\n.dialog .dialog-window-bar .close[data-v-1325d41e] {\n  margin-left: auto;\n}\n.modal-fade-enter-active[data-v-1325d41e], .modal-fade-leave-active[data-v-1325d41e] {\n  transition: opacity .25s;\n}\n.modal-fade-enter[data-v-1325d41e], .modal-fade-leave-to[data-v-1325d41e] {\n  opacity: 0;\n}\n@media (max-width: 840px) {\n.dialog[data-v-1325d41e] {\n    max-width: 100%;\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n}\n", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;

@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"modal-fade"}},[(_vm.visible)?_c('div',{staticClass:"dialog-wrapper",on:{"click":_vm.hide}},[_c('div',{staticClass:"dialog"},[_c('div',{staticClass:"dialog-window-bar"},[_c('h2',[_vm._v(_vm._s(_vm.header))]),_vm._v(" "),_c('button',{staticClass:"close",attrs:{"rel":"closeBtn"},on:{"click":function($event){return _vm.hide()}}},[_vm._v("×")])]),_vm._v(" "),_c('div',{staticClass:"dialog-content scroll-container"},[_vm._t("default")],2)])]):_vm._e()])}
+var staticRenderFns = []
+
+export { render, staticRenderFns }
