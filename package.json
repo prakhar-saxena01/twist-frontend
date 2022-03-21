@@ -18,7 +18,7 @@
     "core-js": "^3.19.3",
     "crypto-js": "^4.1.1",
     "localforage": "^1.10.0",
-    "mux-embed": "^4.4.0",
+    "mux-embed": "^4.6.2",
     "nuxt": "^2.15.8",
     "raven-js": "^3.27.2",
     "resize-observer-polyfill": "^1.5.1",
